@@ -4,6 +4,15 @@
 - [About](#about)
 - [Creating A New Repo: Initial Branching](#creating-a-new-repo-initial-branching)
 - [Branch Semantics And Policies](#branch-semantics-and-policies)
+  - [`latest`](#latest)
+  - [`release/*`](#release)
+  - [`tst`](#tst)
+  - [`dev`](#dev)
+  - [`feature/*`](#feature)
+  - [`task/*`](#task)
+  - [`subtask/*`](#subtask)
+  - [`issue/*`](#issue)
+- [Pull Requests and Merging Remarks](#pull-requests-and-merging-remarks)
 - [Commit Semantics And Rules](#commit-semantics-and-rules)
 - [Semantic Versioning](#semantic-versioning)
 - [Testing](#testing)
@@ -25,6 +34,22 @@ latest
 │
 ├╴ tst
 │  │   
+│  ├╴ release/*
+│  │  │
+│  │  ├╴ task/* [optional]
+│  │  │  ┊
+│  │  │  commit
+│  │  │
+│  │  ├╴ task/* [optional]
+│  │  │  │
+│  │  │  ├╴ subtask/* [optional]
+│  │  │  │  ┊
+│  │  │  │  commit
+│  │  │  │  commit
+│  │  │  ┊
+│  │  ┊
+│  │  commit
+│  │
 │  ├╴ dev
 │  │  │
 │  │  ├╴ feature/*
@@ -62,10 +87,28 @@ Mind that the `feature/*` and `task/*` branches were created through the [backlo
 
 # Branch Semantics And Policies
 
-+ `latest`
-  + This is the `release` branch containing all the stable releases.
+A branch encapsulates a **unit of work**, be it a `feature`, a `task` or a `subtask`. The developer is encouraged to add branches the descriptions added in the scrum board by running:
+
+```shell
+$ git branch --edit-description
+```
+
+Which opens a CLI editor so that the description be persisted:
+
+```txt
+multiline branch
+description here
+# Please edit the description for the branch
+#   feature/bootstrap_template
+# Lines starting with '#' will be stripped.
+```
+
+The branch semantics and policies follow below:
+
+## `latest`
+  + `description`: The `latest` branch is a repository for stable and versioned releases from `release/*` (or from `tst` directly).
   + It is the `default` branch
-  + It branches to `tst`
+  + `branch`: `tst`
   + It is the `compare` branch, meaning all other branches compare to the release branch individually (number of commits behind/ahead).
   + The branch is **permanent**.
   + ~~`delete`~~
@@ -74,10 +117,21 @@ Mind that the `feature/*` and `task/*` branches were created through the [backlo
   + `merge`: `latest ⇄ tst/*` iff:
     + All `tst/*` tests are passing
     + No conflicts
-+ `tst`
+  +  Created by: `product-owner`
+## `release/*`
+  + `description`: This is the `release` branch. As features are merged together in `tst`, `release/*` encapsulates a new release independent from previous releases. Each release contains a `changelog.md` that documents breaking changes, enhancements, *etc.*. `latest` is simply a historic of releases, but that historic is not sufficient to understand the dependencies between the releases. Read `changelog.md` for the dependency tree.
+  + `branch`: `tst`
+  + The branch is **temporary**.
+  + ~~`delete`~~
+  + ~~`push`/`commit`~~
+  + `pull`
+  + `merge` from `dev/*` only such that:
+    + All `dev/*` tests are passing
+    + No conflicts
+  + Created by: `product-owner`
+## `tst`
   + This is the `test` branch that merges all the `features`.
-  + It branches from `latest`
-  + It branches to `dev`
+  + `branch`: `latest`
   + The branch is **permanent**.
   + ~~`delete`~~
   + ~~`push`/`commit`~~
@@ -85,7 +139,9 @@ Mind that the `feature/*` and `task/*` branches were created through the [backlo
   + `merge` from `dev/*` only such that:
     + All `dev/*` tests are passing
     + No conflicts
-+ `dev`
+  + ~~`description`~~ The description is a default description
+  + Created by: `product-owner`
+## `dev`
   + This is the `development` branch that merges all the feature `tasks`.
   + It branches from `tst`
   + It branches to `feature/*`
@@ -96,7 +152,9 @@ Mind that the `feature/*` and `task/*` branches were created through the [backlo
   + `merge` from `feature/*` only such that:
     + All `feature/*` tests are passing
     + No conflicts
-+ `feature/*`
+  + ~~`description`~~ The description is a default description
+  + Created by: `product-owner`
+## `feature/*`
   + This is the `feature` branch that merges all the feature `tasks`.
   + It branches from `dev`
   + It branches to `task/*`
@@ -107,7 +165,12 @@ Mind that the `feature/*` and `task/*` branches were created through the [backlo
   + `merge` from `task/*` only such that:
     + All `task/*` tests are passing
     + No conflicts
-+ `task/*`
+  + `description`
+    + Created by the `product-owner` only
+    + high-level description
+    + `DOD`
+  + Created by: `product-owner`
+## `task/*`
   + This is the `task` branch that merges all the task's `commits` or the task's `subtasks`.
   + It branches from `feature/*`
   + It branches optionally to `subtask/*`
@@ -118,7 +181,11 @@ Mind that the `feature/*` and `task/*` branches were created through the [backlo
   + `merge` from `subtask/*` only such that:
     + All `subtask/*` tests are passing
     + No conflicts
-+ `subtask/*`
+  + `description`
+    + high-level description
+    + `DOD`
+  + Created by: `dev`
+## `subtask/*`
   + This is the `subtask` branch that merges all the subtask's `commits`.
   + The branch is **temporary**.
   + `delete`
@@ -127,7 +194,11 @@ Mind that the `feature/*` and `task/*` branches were created through the [backlo
   + `merge` from `task/*` only such that:
     + All `task/*` tests are passing
     + No conflicts
-+ `issue/*`
+  + `description`
+    + high-level description
+    + `DOD`
+  + Created by: `dev`
+## `issue/*`
   + This is the `subtask` branch that merges all the subtask's `commits`.
   + It branches from `latest`
   + It branches to `latest`
@@ -138,6 +209,10 @@ Mind that the `feature/*` and `task/*` branches were created through the [backlo
   + `merge` from `latest` only such that:
     + `ISSUES.md` linting is passing
     + no conflicts
+  + `description`
+    + high-level description
+    + `DOD`
+  + Created by: `dev`, `product-owner`
   + The `dev` and `tst` will deviate from `latest` because they won't contain the commits to `ISSUES.md`, unless a `PR` is issued to `dev` and `tst` successively.
 
 ```
@@ -161,6 +236,9 @@ latest
 │  │  │  │  │  commit
 ```
 
+# Pull Requests and Merging Remarks
+
+It goes without saying, but merging your work from `A` into a contribution branch `B` with a `PR`, start by pulling `B` and merging with `A` to guarantee all tests are still passing and that there are no merging conflicts. If this is the case, submit a `PR` from `A` to `B`. This will reduce the `PR`s waiting for errors to be fixed before merging. After merging the `PR`, pull the changes merged with `B` and delete `A` if it was also deleted in remote.
 
 # Commit Semantics And Rules
 
