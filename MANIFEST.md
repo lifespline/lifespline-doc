@@ -1,6 +1,9 @@
 - [About](#about)
 - [The Manifest](#the-manifest)
-  - [Open-Source Community](#open-source-community)
+  - [Semantic Versioning](#semantic-versioning)
+  - [Log Your Changes](#log-your-changes)
+  - [Humanity](#humanity)
+    - [Open-Source Community, Democracy, Freedom, Responsability](#open-source-community-democracy-freedom-responsability)
   - [The Ocham's Razor](#the-ochams-razor)
   - [Versioning And Control](#versioning-and-control)
   - [Don't Multiply Beyond Necessity](#dont-multiply-beyond-necessity)
@@ -11,6 +14,7 @@
   - [Love-Averse](#love-averse)
     - [Example 1](#example-1-1)
   - [Time-Driven-Development](#time-driven-development)
+    - [Example 1](#example-1-2)
 
 # About
 
@@ -18,7 +22,14 @@ The guide showcases a set principles with which the developer could develop soft
 
 # The Manifest
 
-## Open-Source Community
+## Semantic Versioning
+
+## Log Your Changes
+
+## Humanity
+
+### Open-Source Community, Democracy, Freedom, Responsability
+
 
 ## The Ocham's Razor
 
@@ -68,5 +79,13 @@ Working on `hawk-ts-template`, I thought of adding some demos to the repo as to 
 ## Time-Driven-Development
 
 It's an awful thing. Not unless somebody/something crucially depends on it, and nobody else can/is assigned to do it but you, - **never code with regards to time**. Coding is not meant to produce, coding is a way of life: **The Way Of The Developer**. Beautifully functional software is a product of **enjoying the process of writing code**, not a product of **trying to deliver the solution on time and according to the specs**.
+
+### Example 1
+
+A way I can get out of the stress of the **Time-Driven-Development** is to:
+- allocate almost all my time to the activity of development
+- get rid of the tasks at work ASAP without compromising too much on quality
+- get rid of all compromises in life ASAP without hurting my loved ones
+- My work is mine, my company's work is my company's
 
 [⌂ home](#about) / [the-manifest](#the-manifest)
