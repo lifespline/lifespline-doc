@@ -139,9 +139,11 @@ The branch semantics and policies follow below:
   + ~~`delete`~~
   + ~~`push`/`commit`~~
   + `pull`
-  + `merge`: `latest ⇄ tst/*` iff:
-    + All `tst/*` tests are passing
+  + `merge`: `latest` or `tst/*` iff:
+    + All `tst/*` tests are passing or,
+    + All `release/*` tests are passing
     + No conflicts
+    + `squash`: The merge is a single commit
   +  Created by: `product-owner`
 
 ## `release/*`
@@ -154,6 +156,7 @@ The branch semantics and policies follow below:
   + `merge` from `dev/*` only such that:
     + All `dev/*` tests are passing
     + No conflicts
+  + ~~`squash`~~
   + Created by: `product-owner`
 
 ## `tst`
@@ -166,6 +169,7 @@ The branch semantics and policies follow below:
   + `merge` from `dev/*` only such that:
     + All `dev/*` tests are passing
     + No conflicts
+  + ~~`squash`~~
   + ~~`description`~~ The description is a default description
   + Created by: `product-owner`
 
@@ -180,6 +184,7 @@ The branch semantics and policies follow below:
   + `merge` from `feature/*` only such that:
     + All `feature/*` tests are passing
     + No conflicts
+  + ~~`squash`~~
   + ~~`description`~~ The description is a default description
   + Created by: `product-owner`
 
@@ -194,6 +199,7 @@ The branch semantics and policies follow below:
   + `merge` from `task/*` only such that:
     + All `task/*` tests are passing
     + No conflicts
+  + ~~`squash`~~
   + `description`
     + Created by the `product-owner` only
     + high-level description
@@ -211,6 +217,7 @@ The branch semantics and policies follow below:
   + `merge` from `subtask/*` only such that:
     + All `subtask/*` tests are passing
     + No conflicts
+  + ~~`squash`~~
   + `description`
     + high-level description
     + `DOD`
@@ -225,6 +232,7 @@ The branch semantics and policies follow below:
   + `merge` from `task/*` only such that:
     + All `task/*` tests are passing
     + No conflicts
+  + ~~`squash`~~
   + `description`
     + high-level description
     + `DOD`
@@ -241,6 +249,7 @@ The branch semantics and policies follow below:
   + `merge` from `latest` only such that:
     + `ISSUES.md` linting is passing
     + no conflicts
+  + ~~`squash`~~
   + `description`
     + high-level description
     + `DOD`
