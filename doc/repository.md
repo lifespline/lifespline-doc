@@ -284,24 +284,40 @@ latest
 
 It goes without saying, but merging your work from `A` into a contribution branch `B` with a `PR`, start by pulling `B` and merging with `A` to guarantee all tests are still passing and that there are no merging conflicts. If this is the case, submit a `PR` from `A` to `B`. This will reduce the `PR`s waiting for errors to be fixed before merging. After merging the `PR`, pull the changes merged with `B` and delete `A` if it was also deleted in remote.
 
+A merge sould always happen with a `squash` first. If the test pass, the merge is completed and the branch deleted. Otherwise the developer can determine the problem in the unquashed commits. But if the merge can happen, it's safe to squash because there's no interest in persisting the history of changes.
+
 [⌂ home](#about)
 
 # Commit Semantics And Rules
 
-A `commit` is an **atomic unit of work** implementing an **atomic idea**. It requires:
+A `commit` is an **atomic unit of work** on the implementation of a feature, or otherwise.
 
-- The idea to be sufficiently simple and clear to be translatable to a commit or set of commits.
-- The commits to include **no other work and only the work** dedicated to the idea and to the nature of the work (see [nature](#nature-of-a-commit))
+```sh
+6f844f9 doc
+122fcdc doc
+8810f6b refactor
+d324d45 issue
+a0a9a1d lint
+a5b25c5 doc
+08983b7 dev
+0b7cb4d refactor
+02e82f6 dev
+f78f050 dev
+49f0f31 dev
+c4e8ed3 dev, dependencies
+```
+
+If a commit doesn't belong to the implementation of the feature, it should not be squashed before being merged with whichever parent branch. Say that the `doc` commits on the example above, none of them are related to the feature, they are not documenting the feature, but were added while working on the feature. In this case, the squash should include all commits but these.
 
 Commits MUST follow the spec:
 
 ```
-<nature>[: <short-description>]
+<work-type>[: <short-description>]
 
 [<description>]
 ```
 
-Both the `<description>` and the `<short-description>` are optional. Ideally the commit work should be atomic and simple enough to describe the change itself. Committing a documentation operation should replace the operation:
+A commit has at least one [work-type](#nature-of-a-commit). Both the `<description>` and the `<short-description>` are optional. Ideally the commit contents should be atomic and simple enough to describe the change itself. Committing a documentation operation should replace the operation:
 
 ```shell
 git commit -m "doc"
@@ -315,7 +331,7 @@ Ctrl+R
 (reverse-i-search)`doc': git commit -m "doc"
 ```
 
-`<nature>` describes the **nature of work** of the commit and is (non-exhaustively) one of:
+`<work-type>` describes the **type of work** of the commit and is (non-exhaustively) one of:
 
 ## `lint`
 
@@ -327,7 +343,7 @@ Formatting operations
 
 ## `doc`
 
-Adding documentation, be it docstrings or inline doc
+Adding documentation, be it `docstrings` or `inline doc` or a `README.md` file.
 
 ## `dev`
 
