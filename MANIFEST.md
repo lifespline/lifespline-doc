@@ -134,6 +134,8 @@ we have to use our hand fingers to insert code characters in a source file. The 
 
 It's very expensive to change contexts, avoid this if possible. **It's not worth it multi-tasking. On the long run, the productivity decreases**.
 
+[⌂ home](#about) / [the-manifest](#the-manifest)
+
 ### Example 1
 
 I was wokring on documentation, and I receive an email regarding a check on the logic of a dataset. The email had two paragraphs. Reading the email alone required changing contexts. I did it, but now I'm out of the task I was doing before, and I can go back to it immediately, but I feel a sort of **fatigue** being exerted upon me simply by changing contexts. **It's not worth it multi-tasking. On the long run, the productivity decreases**.
