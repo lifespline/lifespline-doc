@@ -363,29 +363,40 @@ Improving the code performance
 
 Code refactoring. Examples:
 
-- renaming a component
+- renaming a component. Differs from [fix](#fix) if the name is changing as a **decision**, not because it was **incorrect**.
 
 ## `fix`
 
-Fixing code that was not working as expected
+- Fixing code that was not working as expected
+- Fixing a component's name. Differs from [refactor](#refactor) if the name was **incorrect**.
+
+[⌂ home](#about)
 
 ## `clean`
 
 Remove logic or files that were left forgotten and are no longer required. Ideally, add a description to these commits explaining why those files/logic was deleted by the commit.
 
+[⌂ home](#about)
+
 ## `merge`
 
 Merge the work between two branches.
 
+[⌂ home](#about)
+
 ## `dependency`
 
 Add system/application dependencies.
+
+[⌂ home](#about)
 
 ## `config`
 
 Change configuration. Examples:
 
 - Editing `tsconfig.json::include` to exclude `"resource/*/*.ts"`
+
+[⌂ home](#about)
 
 ## `ignore`
 

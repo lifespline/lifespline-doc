@@ -2,11 +2,13 @@
 - [The Manifest](#the-manifest)
   - [Play](#play)
     - [Example 1 - Promises, promises...](#example-1---promises-promises)
+  - [Over The Shoulders Of Giants](#over-the-shoulders-of-giants)
+    - [Example 1](#example-1)
   - [Serenity And Focus](#serenity-and-focus)
     - [.git](#git)
-      - [Example 1](#example-1)
-    - [SDK](#sdk)
       - [Example 1](#example-1-1)
+    - [SDK](#sdk)
+      - [Example 1](#example-1-2)
   - [Coding](#coding)
   - [Mouse](#mouse)
   - [Laptop](#laptop)
@@ -16,11 +18,12 @@
   - [Sports](#sports)
   - [UI And UX](#ui-and-ux)
   - [Context Changing Is Expensive](#context-changing-is-expensive)
-    - [Example 1](#example-1-2)
+    - [Example 1](#example-1-3)
   - [Remote Is Heaven](#remote-is-heaven)
     - [.git](#git-1)
   - [Semantic Versioning](#semantic-versioning)
   - [Log Your Changes](#log-your-changes)
+  - [Squash Your Past](#squash-your-past)
   - [Humanity](#humanity)
     - [Open-Source Community, Democracy, Freedom, Responsability](#open-source-community-democracy-freedom-responsability)
   - [The Ocham's Razor](#the-ochams-razor)
@@ -30,18 +33,18 @@
     - [.git](#git-2)
     - [LOC And Refactoring](#loc-and-refactoring)
   - [See-To-Believe](#see-to-believe)
-    - [Example 1](#example-1-3)
-  - [Love-Averse: A History Of Decoupling](#love-averse-a-history-of-decoupling)
     - [Example 1](#example-1-4)
+  - [Love-Averse: A History Of Decoupling](#love-averse-a-history-of-decoupling)
+    - [Example 1](#example-1-5)
   - [Beauty](#beauty)
   - [Automation](#automation)
     - [.git](#git-3)
     - [doc](#doc)
-      - [Example 1](#example-1-5)
-    - [SDK](#sdk-1)
       - [Example 1](#example-1-6)
+    - [SDK](#sdk-1)
+      - [Example 1](#example-1-7)
   - [Time-Driven-Development](#time-driven-development)
-    - [Example 1](#example-1-7)
+    - [Example 1](#example-1-8)
 
 # About
 
@@ -56,6 +59,16 @@ It's fundamental to let **play** drive the coding. It's through play that the de
 ### Example 1 - Promises, promises...
 
 Learning to use the AWS SDK V3 JS, I came accross the notion of `promises` and then `asyn/await` + `Promise.then.catch` patterns. It was great dedicating some time to play with it to get a good grasp of what it is. If I'm doing [time-driven-development](#time-driven-development), I could never play without a guilty consciousness. Play requires [serenity-and-focus](#serenity-and-focus).
+
+[⌂ home](#about) / [the-manifest](#the-manifest)
+
+## Over The Shoulders Of Giants
+
+Never **reinvent the wheel**. The less code, the better [loc-and-refactoring](#loc-and-refactoring). Choose to walk *on the shoulders of giants*, but focus on the engineering to integrate those technologies. If you got fast and well where you wanted to, - great -, you were given time to work on something more important!
+
+### Example 1
+
+I wanted to learn how to build and deploy and maintain a website from scratch. My approach is always a philosophical one, or a mathematical one: always start from the axioms. There's no need for this. Tech is a world without beginning and without an end. It's all in the process. Googling the fastest frameworks to build, deploy and maintain a website.
 
 [⌂ home](#about) / [the-manifest](#the-manifest)
 
@@ -136,6 +149,10 @@ Never leave your local changes unstaged and unpushed. Its preferable to unstage 
 ## Semantic Versioning
 
 ## Log Your Changes
+
+## Squash Your Past
+
+Sometimes different commits are relative to the same component. If you're persisting the commit history, it's best to `squash` the related commits before finishing the feature. See: [versioning-and-control](#versioning-and-control)
 
 ## Humanity
 
