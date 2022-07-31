@@ -62,6 +62,46 @@ Learning to use the AWS SDK V3 JS, I came accross the notion of `promises` and t
 
 [⌂ home](#about) / [the-manifest](#the-manifest)
 
+## Agile
+
+## You Are Not Binary
+
+## Curiosity Killed The Cat
+
+Too much curiosity can lead to [burnout](#burnout). It's preferable to add the curiosity to a file (ex.: `praxis.md`) with a `TODO` and go back to it afterwards, and stick to the layed out plan meanwhile. Also, [context-changing-is-expensive](#context-changing-is-expensive)).
+
+[⌂ home](#about) / [the-manifest](#the-manifest)
+
+## Rebels Die Young
+
+You're very seldom justified to neglect the principles of this framework. If you feel you are entitled to do it, you're likely approaching [burnout](#burnout).
+
+[⌂ home](#about) / [the-manifest](#the-manifest)
+
+## Burnout
+
+Never do **nothing but coding**, this causes you to burnout. Dedicate most of your time to coding, but do other activities like sports, being with friends, *etc.* It's very important that you **switch contexts** (see [context-changing-is-expensive](#context-changing-is-expensive)). Burnout causes you to loose [serenity-and-focus](#serenity-and-focus) for days. You can identify you're approaching burnout with the signs:
+
+- You're justified to neglect the principles of this framework
+- You start enjoying injecting more time and more time into tasks
+- You let your curiosity overwrite the plan
+- You're working and disregarding distracting factors like: headache, backpain, bad lighting, noisy music on the headset, *etc.*
+- Your reality is becoming the code characters. The commits. The browser. The successful builds. The *improving just this one thing more*, the going into coding for 11 hours straight, feeling detached from the real world, neglecting your body, your eyes, your friends and loved ones. When you start feeling you are digital, when you start feeling nothing else matters, you've burnt out.
+
+If you feel any of these signs, switch to an activity like sports, being with friends, *etc.*, and get back to coding when you feel you've had enough of it [you-cant-be-unhappy-without-being-unhappy](#you-cant-be-unhappy-without-being-unhappy)
+
+### Example 1
+
+Put so much time into learning CDK the week before for the interview monday, I could work no more on sunday. I begin not caring It's 23:00 and I'm writing this principle in hopes that this won't happen often in the future.
+
+[⌂ home](#about) / [the-manifest](#the-manifest)
+
+## You Can't Be Unhappy Without Being Unhappy
+
+Not coding can feel meaningless, chaotic and miserable. Rescue yourself from that situation by escaping to a nice room with a nice computer and a nice internet connection.
+
+[⌂ home](#about) / [the-manifest](#the-manifest)
+
 ## Over The Shoulders Of Giants
 
 Never **reinvent the wheel**. The less code, the better [loc-and-refactoring](#loc-and-refactoring). Choose to walk *on the shoulders of giants*, but focus on the engineering to integrate those technologies. If you got fast and well where you wanted to, - great -, you were given time to work on something more important!
@@ -132,7 +172,7 @@ we have to use our hand fingers to insert code characters in a source file. The 
 
 ## Context Changing Is Expensive
 
-It's very expensive to change contexts, avoid this if possible. **It's not worth it multi-tasking. On the long run, the productivity decreases**.
+It's very expensive to change contexts, avoid this if possible. **It's not worth it multi-tasking. On the long run, the productivity decreases**, but mind [burnout](#burnout).
 
 [⌂ home](#about) / [the-manifest](#the-manifest)
 
